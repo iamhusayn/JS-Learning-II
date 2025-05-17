@@ -27,13 +27,13 @@ console.log(appleJuice);
 console.log(fruitProcessor(2, 10));
 
 //Practice 1
-// function food(pepper, maggi, salt) {
-//   const friedRice = `I made a fried rice using ${pepper} pepper, ${maggi} maggi and ${salt} pinch of salt.`;
-//   return friedRice;
-// }
+function food(pepper, maggi, salt) {
+  const friedRice = `I made a fried rice using ${pepper} pepper, ${maggi} maggi and ${salt} pinch of salt.`;
+  return friedRice;
+}
 
-// const cook = food(3, 1, 2);
-// console.log(cook);
+const cook = food(3, 1, 2);
+console.log(cook);
 
 //Practise 2
 
@@ -71,20 +71,20 @@ console.log(retirementAge(1995, "Bowale"));
 
 //Calling a function inside a function
 
-// function diceIngredient(ingredients) {
-//   return ingredients * 4;
-// }
+function diceIngredient(ingredients) {
+  return ingredients * 4;
+}
 
-// function prepare(pepper, maggi, salt) {
-//   const pepperPieces = diceIngredient(pepper);
-//   const maggiPieces = diceIngredient(maggi);
-//   const saltPieces = diceIngredient(salt);
+function prepare(pepper, maggi, salt) {
+  const pepperPieces = diceIngredient(pepper);
+  const maggiPieces = diceIngredient(maggi);
+  const saltPieces = diceIngredient(salt);
 
-//   const friedRice = `I made fried rice using ${pepperPieces} pepper, ${maggiPieces} maggi and ${saltPieces} pinch of salt.`;
-//   return friedRice;
-// }
+  const friedRice = `I made fried rice using ${pepperPieces} pepper, ${maggiPieces} maggi and ${saltPieces} pinch of salt.`;
+  return friedRice;
+}
 
-// console.log(prepare(3, 2, 1)); //This will return undefined because of the return statement in the diceIngredient function.
+console.log(prepare(3, 2, 1)); //This will return undefined because of the return statement in the diceIngredient function.
 
 //Practice
 const realAge = (bYear) => 2050 - bYear;
@@ -103,5 +103,37 @@ const yearUntilMarriage = function (bYear, firstName) {
     return -1;
   }
 };
-console.log(yearUntilMarriage(1990, "John"));
-console.log(yearUntilMarriage(1985, "Jane"));
+console.log(yearUntilMarriage(1998, "John"));
+console.log(yearUntilMarriage(1940, "Jane"));
+
+//Practise Two
+function calcAverage(aveargeScore1, aveargeScore2, aveargeScore3) {
+  return (aveargeScore1 + aveargeScore2 + aveargeScore3) / 3;
+}
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+
+// console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  // const avgDolphins = scoreDolphins;
+  // const avgKoalas = scoreKoalas;
+  // const victoryPoint = 2;
+
+  // console.log(avgDolphins, avgKoalas);
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+  } else {
+    console.log("No team wins...");
+  }
+};
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+scoreDolphins = calcAverage(85, 65, 47);
+scoreKoalas = calcAverage(128, 837, 86);
+
+console.log(scoreDolphins, scoreKoalas);
+checkWinner(scoreDolphins, scoreKoalas);
