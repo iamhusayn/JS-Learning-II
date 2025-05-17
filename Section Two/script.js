@@ -1,12 +1,12 @@
 // "use strict";
 
-// let withDriversLicense = false;
-// const passTest = true;
+let withDriversLicense = false;
+const passTest = true;
 
-// if (passTest) withDriversLicense = true;
-// if (withDriversLicense) console.log("Strap your seatbelt");
+if (passTest) withDriversLicense = true;
+if (withDriversLicense) console.log("Strap your seatbelt");
 
-// const driver = "Windows";
+const driver = "Windows";
 
 //FUNCTIONS
 function logger() {
@@ -137,3 +137,40 @@ scoreKoalas = calcAverage(128, 837, 86);
 
 console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
+
+//LEARNING ARRAYS
+const friends = new Array("Adesewa", "Tosin", "Hassan", "Oloyede");
+const familyMembers = ["Mum", "Dad", "Teehay", "Temilola"];
+console.log(friends);
+console.log(familyMembers);
+console.log(friends[1]);
+console.log(friends[3]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]); //find the last element in the array
+
+friends[2] = "Quadri";
+console.log(friends); //elements within a variable declared with const in an array are mmutable i.e changed/replaced, because arrays are non-primitive data type.
+
+//Arrays can store different types of data
+const Husayn = [
+  "Husayn",
+  friends,
+  ["Rice", "semo", "bananas"],
+  2025 - 1991,
+  familyMembers,
+];
+console.log(Husayn);
+
+const calcAge = function (birthYear) {
+  return 2025 - birthYear;
+};
+const years = [1990, 1967, 2002, 2010, 2018, 1965];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[2]);
+const age4 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3, age4);
+
+const ages = [age1, age2, calcAge(years[2]), calcAge(years[years.length - 1])];
+console.log(ages);
