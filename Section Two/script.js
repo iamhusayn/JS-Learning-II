@@ -174,3 +174,52 @@ console.log(age1, age2, age3, age4);
 
 const ages = [age1, age2, calcAge(years[2]), calcAge(years[years.length - 1])];
 console.log(ages);
+
+//Adding items to an Array
+const newfriends = ["Adesewa", "Tosin", "Hassan", "Oloyede"];
+newfriends.push("Yetunde"); //Add to the end of the list
+newfriends.unshift("Rasheed"); //Add to the begining of thr list
+console.log(newfriends);
+
+//Removing items from a list
+const removed = newfriends.pop();
+newfriends.pop(); //To remove the last item/element
+newfriends.shift(); //To remove from the beginning of the list
+console.log(removed);
+console.log(newfriends);
+
+//The Position of an element
+console.log(newfriends.indexOf("Yetunde")); //The position is -1 because it does not exist in the list
+console.log(newfriends.indexOf("Adesewa")); //The position is 0 because it is the first on the list.
+console.log(newfriends.indexOf("Tosin")); //The position is 1 because it is the second on the list.
+console.log(newfriends.includes("Adesewa")); //Returns a boolean (true or false) if the item is on the list or not. it uses strict comparison ===
+
+function ispresent(newfriends) {
+  return newfriends.filter();
+}
+
+const newfriends2 = ["Adesewa", "Tosin", "Hassan", "Oloyede"];
+
+if (newfriends2.includes("Adesewa")) {
+  console.log(`You have a friend called Adesewa!`);
+} else {
+  console.log(`You don't have a friend called Adesewa!`);
+}
+
+const calcTip = (bill) =>
+  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totalValue = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+console.log(bills, tips, totalValue);
+
+// const checkBills = function (bills, tips, totalValue) {
+//   console.log(
+//     `The bill is ${bill}, the tip is ${tip} and the total value is ${totalValue}`
+//   );
+// };
+
+// checkBills();
+// console.log(checkBills);
