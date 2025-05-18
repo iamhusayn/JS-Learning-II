@@ -8,7 +8,7 @@ if (withDriversLicense) console.log("Strap your seatbelt");
 
 const driver = "Windows";
 
-//FUNCTIONS
+//LEARNING FUNCTIONS
 function logger() {
   console.log("My name is Husayn");
 }
@@ -70,7 +70,6 @@ console.log(retirementAge(1967, "Husayn"));
 console.log(retirementAge(1995, "Bowale"));
 
 //Calling a function inside a function
-
 function diceIngredient(ingredients) {
   return ingredients * 4;
 }
@@ -139,6 +138,7 @@ console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
 
 //LEARNING ARRAYS
+//Arrays can also be objects becasue they accept methods such as pop, push, shift, unshift etc.
 const friends = new Array("Adesewa", "Tosin", "Hassan", "Oloyede");
 const familyMembers = ["Mum", "Dad", "Teehay", "Temilola"];
 console.log(friends);
@@ -151,7 +151,7 @@ console.log(friends[friends.length - 1]); //find the last element in the array
 friends[2] = "Quadri";
 console.log(friends); //elements within a variable declared with const in an array are mmutable i.e changed/replaced, because arrays are non-primitive data type.
 
-//Arrays can store different types of data
+//Arrays can store different types of data.
 const Husayn = [
   "Husayn",
   friends,
@@ -215,11 +215,199 @@ const totalValue = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(bills, tips, totalValue);
 
-// const checkBills = function (bills, tips, totalValue) {
+//lEARNING OBJECTS
+const husayn = {
+  firstName: "Husayn",
+  lastName: "Alawiye",
+  job: "Sotware Developer",
+  level: "Junior",
+  age: 34,
+  friends: ["Adesewa", "Tosin", "Oloyede"],
+};
+
+//Dot and bracket notaion - how to retreive and change data in an object
+console.log(husayn.lastName);
+console.log(husayn["lastName"]);
+
+const nameKey = "Name";
+console.log(husayn["first" + nameKey]);
+console.log(husayn["last" + nameKey]);
+
+// const interestedIn = prompt(
+//   "What would you like to know about Husayn? His firstName, lastName, age, job, level or his friends."
+// );
+
+// if (husayn[interestedIn]) {
+//   console.log(husayn[interestedIn]);
+// } else {
 //   console.log(
-//     `The bill is ${bill}, the tip is ${tip} and the total value is ${totalValue}`
+//     "You have entered a non-existing request. Kindly select from firstName, lastName, age, job, level or his friends."
 //   );
+// }
+
+//Dot and bracket notaion - to add new property to an object
+husayn.location = "Lagos";
+husayn["twitter"] = "@iamhusayn";
+console.log(husayn);
+
+//challenge
+//"Jonas has 3 friends, and his best friend is called Michael"
+
+const jonasLife = {
+  hisName: "Jonas",
+  hisFriends: ["Michael", "Husayn", "Ayobami"],
+  noOfFriends: 3,
+  bestFriend: "Michael",
+};
+
+// const likeToKnow = prompt(
+//   "What do you want to know about Jonas? hisName, hisFriends, noOfFriends, or bestFriend"
+// );
+
+// if (jonasLife[likeToKnow]) {
+//   console.log(jonasLife[likeToKnow]);
+// } else {
+//   console.log(
+//     "You have entered a non-existing request. Kindly select from hisName, hisFriends, noOfFriends, or bestFriend"
+//   );
+// }
+
+console.log(
+  `Meet ${jonasLife.hisName}, he has ${jonasLife.hisFriends.length} firends and his best friend is called ${jonasLife.bestFriend}.`
+);
+
+//Object Methods: Any fucntion attached to an object is called a method.
+const jonas = {
+  hisName: "Jonas", //String value
+  hisFriends: ["Michael", "Husayn", "Ayobami"], //Array value
+  birthYear: 1991, //Number value
+  bestFriend: "Michael", //String value
+  hasDriversLicense: true, //Boolean value
+
+  // calcAge: function (birthYear) {
+  //   //function value
+  //   //This i a function expression.
+  //   return 2037 - birthYear;
+  // }, //Only a fucntion expession works here. fucntion declaration wiil not work and throw an error.
+
+  //using the "this" keyword
+  // calcAge: function () {
+  //   return 2037 - this.birthYear;
+  // },
+
+  //using the "this" keyword to assign/store the age in a variable in the calcAge method
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+};
+console.log(jonas.calcAge());
+console.log(jonas.age);
+
+// console.log(jonas.calcAge());
+
+// console.log(jonas.calcAge(1991)); //Using the dot notation too access the calcAge method/function
+// console.log(jonas["calcAge"](1991)); //Using the block notation to access the calcAge method.
+
+//Practise Exercise
+const newJonas = {
+  hisName: "Jonas", //String value
+  hisFriends: ["Michael", "Husayn", "Ayobami"], //Array value
+  birthYear: 1991, //Number value
+  job: "teacher",
+  bestFriend: "Michael", //String value
+  hasDriversLicense: true,
+
+  jonasNewAge: function () {
+    this.newAge = 2040 - this.birthYear;
+    return this.newAge;
+  },
+
+  jonasOccupation: function () {
+    this.occupation = this.job;
+    return this.occupation;
+  },
+
+  introduceJonas: function () {
+    return `This is ${
+      this.hisName
+    }. He is a ${this.jonasNewAge()}-year old ${this.jonasOccupation()} and he ${
+      this.hasDriversLicense ? "has" : "does not have"
+    } a driver's license`;
+  },
+};
+
+console.log(newJonas.introduceJonas());
+
+// console.log(
+//   `This is ${newJonas.hisName}. He is a ${newJonas.newAge}-year old ${
+//     newJonas.job
+//   } and he ${
+//     this.hasDriversLicense
+//       ? "has a driver's license"
+//       : "does not have a driver's license"
+//   }`
+// );   //THIS IS NOT A GOOD APPROACH
+
+//Pratise Exercise
+
+const mark = {
+  fullName: "Mark Smith",
+  mass: 78,
+  height: 1.69,
+
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+
+  // markBMI: function () {
+  //   return `${this.fullName}\'s BMI ${this.calcBMI()} is higher than ${
+  //     this.fullName
+  //   }\'s BMI ${this.calcBMI()} `;
+  // },
+};
+
+const markBMI = mark.calcBMI();
+// console.log(markBMI);
+// console.log(mark.markBMI());
+
+const john = {
+  fullName: "John Williams",
+  mass: 92,
+  height: 1.95,
+
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+
+  // johnBMI: function () {
+  //   return `${this.fullName}\'s BMI ${this.calcBMI()} is higher than ${
+  //     this.fullName
+  //   }\'s BMI ${this.calcBMI()} `;
+  // },
+};
+
+const johnBMI = john.calcBMI();
+// console.log(johnBMI);
+// console.log(john.johnBMI());
+// console.log(markBMI > johnBMI);
+
+// const comparison = function (johnBMI, markBMI) {
+if (markBMI > johnBMI) {
+  console.log(
+    `${mark.fullName}\'s BMI (${mark.calcBMI()}) is higher than ${
+      john.fullName
+    }\'s BMI (${john.calcBMI()})`
+  );
+} else if (johnBMI > markBMI) {
+  console.log(
+    `${john.fullName}\'s BMI (${john.calcBMI()}) is higher than ${
+      mark.fullName
+    }\'s BMI (${mark.calcBMI()})`
+  );
+}
 // };
 
-// checkBills();
-// console.log(checkBills);
+// console.log(comparison());
