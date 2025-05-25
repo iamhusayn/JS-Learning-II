@@ -476,3 +476,26 @@ for (let i = 0; i < oldHusayn.length; i++) {
 
   console.log(oldHusayn[i], typeof oldHusayn[i]);
 }
+
+//LOOPING BACKWARDS AND LOOPING IN A LOOP
+//Looping  Backwards
+const newHusayn = [
+  "Husayn",
+  "Alawiye",
+  2025 - 1991,
+  "web developer",
+  ["Adeyemi", "Adesewa", "Yetunde"],
+];
+
+for (let i = newHusayn.length - 1; i >= 0; i--) {
+  console.log(i, newHusayn[i]);
+}
+
+//Creating a Loop in a loop
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`Welcome to exercise ${exercise}`);
+
+  for (rep = 1; rep <= 5; rep++) {
+    console.log(`Exercise ${exercise}, rep ${rep}`);
+  }
+}
