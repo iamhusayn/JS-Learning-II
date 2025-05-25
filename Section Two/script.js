@@ -411,3 +411,68 @@ if (markBMI > johnBMI) {
 // };
 
 // console.log(comparison());
+
+//Practise
+
+//LOOPS - Allows to automate a repeatitive task. The loop has 3 steps.
+//Step one - The counter - This is a value that is stored in a variable. This value is usually the first count.
+//Step two - The condition - This is the conditon at which the loop continue to run as long as the "condition" is "true", if "false", the loop stops.
+//Step 3 - Increasing the counter using ++ This is to update/increase "the counter" each time the loop runs
+//"for" Loop keeps running while the 'condition" is "true"
+
+//Example: Lifting Weights repetition 1;
+// console.log("Lifting Weights repetition 1");
+// console.log("Lifting Weights repetition 2");
+// console.log("Lifting Weights repetition 3");
+// console.log("Lifting Weights repetition 4");
+// console.log("Lifting Weights repetition 5");
+// console.log("Lifting Weights repetition 6");
+// console.log("Lifting Weights repetition 7");
+// console.log("Lifting Weights repetition 8");
+// console.log("Lifting Weights repetition 9");
+// console.log("Lifting Weights repetition 10");
+
+for (let rep = 1; rep <= 1; rep++) {
+  console.log(`Lifting weights repetition ${rep}`);
+}
+
+const types = [];
+const oldHusayn = [
+  "Husayn",
+  "Alawiye",
+  2037 - 1991,
+  "web developer",
+  ["Adeyemi", "Adesewa", "Yetunde"],
+];
+
+for (let i = 0; i < oldHusayn.length; i++) {
+  console.log(oldHusayn[i], typeof oldHusayn[i]);
+
+  //adding elements to an array
+  // types[i] = typeof oldHusayn[i]; //method 1
+  types.push(typeof oldHusayn[i]); //method 2
+}
+console.log(types);
+
+const year = [1991, 1934, 1940, 1999];
+const age = [];
+
+for (let i = 0; i < year.length; i++) {
+  age.push(2025 - year[i]);
+}
+console.log(age);
+
+//continue and break statement
+console.log("---- ONLY STRINGS ---");
+for (let i = 0; i < oldHusayn.length; i++) {
+  if (typeof oldHusayn[i] !== "string") continue; //this will skip other elemets that are not strings
+
+  console.log(oldHusayn[i], typeof oldHusayn[i]);
+}
+
+console.log("---- BREAK WITH NUMBERS ---");
+for (let i = 0; i < oldHusayn.length; i++) {
+  if (typeof oldHusayn[i] === "number") break; //this will skip other elemets that are not strings
+
+  console.log(oldHusayn[i], typeof oldHusayn[i]);
+}
