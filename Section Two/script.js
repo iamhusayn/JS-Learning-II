@@ -495,7 +495,54 @@ for (let i = newHusayn.length - 1; i >= 0; i--) {
 for (let exercise = 1; exercise < 4; exercise++) {
   console.log(`Welcome to exercise ${exercise}`);
 
-  for (rep = 1; rep <= 5; rep++) {
-    console.log(`Exercise ${exercise}, rep ${rep}`);
+  // for (rep = 1; rep <= 5; rep++) {
+  //   console.log(`Exercise ${exercise}, rep ${rep}`);
+  // }
+}
+
+//THE WHILE LOOP
+let rep = 1;
+while (rep <= 5) {
+  console.log(`You have lifted ${rep} reps`);
+  rep++;
+}
+//looping a condition that is not a number
+let dice = Math.trunc(Math.random() * 6) + 1; //This will generate a random number between 1 and 6
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1; //This will generate a random number between 1 and 6
+  if (dice === 6) {
+    console.log(`You rolled a ${dice}. Loop has ended...`);
   }
 }
+
+//Practice Exercise
+const billss = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tipss = [];
+const totalss = [];
+
+const calcTipp = (bill) =>
+  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+//LOOPING THROUGH THE ARRAY
+for (let i = 0; i < billss.length; i++) {
+  const tip = calcTipp(billss[i]);
+  tipss.push(tip);
+  totalss.push(tip + billss[i]);
+}
+
+console.log(billss, tipss, totalss);
+
+//Calculating the average of the total bills
+const calcAve = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+
+console.log(calcAve(totalss));
+console.log(calcAve(tipss));
